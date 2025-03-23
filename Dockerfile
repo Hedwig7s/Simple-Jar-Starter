@@ -8,6 +8,7 @@ ENV MC_VERSION 1.20.1
 ENV MC_EULA true
 ENV MC_RAM_XMS 1536M
 ENV MC_RAM_XMX 2048M
+ENV JAR server.jar
 
 VOLUME /home/server
 
@@ -22,7 +23,7 @@ RUN microdnf install -y epel-release &&\
 
 RUN chmod +x /main.sh
 
-RUN useradd purpur
-USER purpur
+RUN useradd user
+USER user
 
 CMD ["/main.sh"]
